@@ -1,0 +1,216 @@
+.header {
+  background-color: #f3f4f5;
+  padding: 10px 0 10px;
+  height: 46px;
+  display: flex;
+  flex-direction: initial;
+  width: 95%;
+  justify-content: space-around;
+}
+
+.header .btn_goback {
+  display: block;
+  width: 50px;
+  height: 50px;
+  // margin: auto;
+  background: url("/assets/images/common/ico_menu_back.svg") no-repeat center
+    center;
+  background-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0px 10px 0px 0px;
+  outline: 0;
+  border: 0;
+  font-size: 0;
+}
+.header .btn_mainmenu {
+  display: block;
+  width: 40px;
+  height: 50px;
+  margin: auto;
+  border: 0;
+  background: url("/assets/images/header/btn_menu_black.svg") no-repeat center
+    center;
+  background-size: 24px;
+  font-size: 0;
+}
+.header .btn_search {
+  display: block;
+  width: 40px;
+  height: 50px;
+  margin: auto;
+  background: url("/assets/images/common/btn_search2.svg") no-repeat center
+    center;
+  background-size: 24px;
+  outline: 0;
+  border: 0;
+}
+.header .btn_cart {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  background: url("/assets/images/common/ico_cart.svg") no-repeat center center;
+  background-size: 25px;
+}
+.header .btn_logo {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-top: 6px;
+  background: url("/assets/images/hott_main2/ico_instagram.svg") no-repeat
+    center 0px;
+  background-size: 100% !important;
+}
+.header a {
+  display: block;
+  max-width: 120px;
+  margin: auto;
+}
+.header a img {
+  width: 100%;
+}
+.quick_menu .quick_gotop {
+  bottom: 22px;
+}
+.quick_menu .quick_gotop.on {
+  bottom: 22px;
+}
+
+.top_text {
+  margin-top: 14px;
+  font-family: SFUIText;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #a4a5a7;
+}
+
+.top_lang {
+  top: -12px;
+  position: relative;
+}
+
+.top_flag {
+  margin: 8px 0px 0px 0px;
+}
+
+.one_row {
+  display: flex;
+  flex-direction: initial;
+  justify-content: space-between;
+}
+
+.nav_area {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+@media screen and (max-width: 550px) {
+  .viewHeader1 {
+    display: none;
+  }
+  .viewHeader2 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .viewHeader1 {
+    display: block;
+  }
+  .viewHeader2 {
+    display: none;
+  }
+}
+
+input[id="icon"] {
+  display: none;
+}
+
+input[id="icon"] + label {
+  position: relative;
+  display: block;
+  width: 23px;
+  height: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+input[id="icon"] + label > span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 30px;
+  background: #000;
+  transition: all 0.35s; /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
+  z-index: 2;
+}
+
+input[id="icon"] + label > span:nth-child(1) {
+  top: 0px;
+}
+
+input[id="icon"] + label > span:nth-child(2) {
+  top: 50%;
+  transform: translateY(
+    -50%
+  ); /* 엘리먼트를 변형할 때 쓴다. 비틀거나 구부리거나 돌릴 때 . 여러가지로 모양을 바꿀 때 */
+}
+
+input[id="icon"] + label > span:nth-child(3) {
+  bottom: 0px;
+}
+
+input[id="icon"]:checked + label > span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="icon"]:checked + label > span:nth-child(2) {
+  opacity: 0;
+}
+
+input[id="icon"]:checked + label > span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+#icon + label + #header {
+  position: fixed; /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
+  width: 250px;
+  height: 100%;
+  background: #333;
+  top: 0px;
+  padding: 60px 25px 25px 25px;
+  box-sizing: border-box;
+  left: -300px;
+  z-index: 9;
+  transition: all 0.35s;
+}
+
+#icon:checked + label + #header {
+  left: 0px;
+}
+
+#icon:checked + label + #header > ul > li > a {
+  color: white;
+  font-family: SFUIText;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  line-height: 50px;
+}
+
+.ham_box {
+  margin: 5px 0px 0px 5%;
+}

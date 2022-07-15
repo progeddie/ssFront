@@ -1,0 +1,55 @@
+/**
+btn
+ */
+@mixin btn($height: 35px, $round: false) {
+  display: inline-block;
+  height: $height;
+  line-height: $height;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  background: #fff;
+  @if $round {
+    border-radius: $height;
+  }
+}
+
+/**
+btn color
+ */
+@mixin color($bg: #fff, $border: 0, $color: #fff) {
+  background: $bg;
+  border: $border;
+  color: $color;
+}
+
+/**
+icon
+ */
+@mixin icon(
+  $fontSize: 14px,
+  $fontWeight: 400,
+  $color: #555,
+  $lineHeight: 18px
+) {
+  font: {
+    size: $fontSize;
+    weight: $fontWeight;
+  }
+  color: $color;
+  line-height: $lineHeight;
+}
+
+@mixin iconBefore(
+  $width: 16px,
+  $height: 16px,
+  $margin: (
+    0 3px -4px 0,
+  )
+) {
+  content: "";
+  display: inline-block;
+  width: $width;
+  height: $height;
+  margin: $margin;
+  background-size: 100% !important;
+}

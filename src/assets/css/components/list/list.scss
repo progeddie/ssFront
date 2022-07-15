@@ -1,0 +1,39 @@
+.message_group {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #3d3d3d;
+  text-align: center;
+  strong {
+    display: inline-block;
+    padding: 10px 0 0 21px;
+    color: #6d63e6;
+    line-height: 27px;
+    position: relative;
+    //기존 .ico_instagram_clock
+    // &::before {
+    // 	content: '';
+    // 	display: block;
+    // 	width: 51px;
+    // 	height: 51px;
+    // 	margin: 0 5px -4px 0;
+    // 	background: url('~img/hott_main2/ico_instagram_clock.svg') no-repeat;
+    // 	background-size: 100%;
+    // 	position: absolute;
+    // 	top: 0;
+    // 	left: 0;
+    // }
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 16px 30px;
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

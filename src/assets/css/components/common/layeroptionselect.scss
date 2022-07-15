@@ -1,0 +1,82 @@
+.layerOption.inDealRequest {
+  position: fixed;
+  .popup_container {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cart_list {
+    margin-bottom: 10px;
+  }
+}
+
+.ico_msginfo {
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 11px;
+    margin: 0 3px 0 0;
+    background: url("/assets/images/common/ico_msginfo.svg") no-repeat;
+    background-size: 100%;
+  }
+  strong {
+    color: #fffba4;
+  }
+  width: calc(100% + 34px);
+  margin: -10px 0 10px -16px;
+  padding: 10px 0;
+  background-color: #618dff;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: -1px;
+  left: -1px;
+  z-index: 2;
+}
+//선택된 카트
+.cart_seleted_list {
+  max-height: 195px;
+  overflow-y: auto;
+  margin: 0 0 10px;
+  border-top: 1px solid #dbdbdb;
+  .cart_selected_slot {
+    margin-top: 10px;
+    position: relative;
+    border: 1px solid #bbb;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 9px 15px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #333;
+  }
+  &.justone {
+    margin-top: 0;
+    border-top: 0;
+    .cart_selected_slot {
+      margin-top: 0;
+    }
+  }
+}
+.btn_rounded {
+  width: 100%;
+  height: 45px !important;
+  line-height: 45px !important;
+  border-radius: 6px;
+  &.btn_line_red {
+    animation: change-button-size 0.2s ease-in-out;
+    width: 26.5%;
+    margin-right: 1%;
+  }
+}
+
+@keyframes change-button-size {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 26.5%;
+  }
+}
