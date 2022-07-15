@@ -43,13 +43,12 @@ const HeaderMypage: React.FC<HeaderProps> = ({ lang }) => {
       </div>
       <div className="viewHeader2">
         <div className="header">
-          <div className="ham_box">
+          <div>
+            <a href="javascript:history.back()" className="btn_goback"></a>
+          </div>
+          {/* <div className="ham_box">
             <input type="checkbox" id="icon" />
-            <label htmlFor="icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </label>
+            <label htmlFor="icon"></label>
             <div id="header">
               <ul>
                 <li>
@@ -66,7 +65,7 @@ const HeaderMypage: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           <div>{/* <Link to="/" className="btn_logo"></Link> */}</div>
           <div style={{ marginTop: "-10px" }}>
             <Link to="" className="btn_search fl"></Link>
