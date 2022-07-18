@@ -26,7 +26,6 @@ const ProductItem: React.FC<list> = ({ lang, id, title, url, thumbnail }) => {
           <div className="image">
             <div className="inner">
               <img src={thumbnail} alt="" />
-              ``
             </div>
           </div>
           <Link to={`/${lang}/list/${id}`}>

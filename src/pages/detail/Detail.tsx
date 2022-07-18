@@ -3,14 +3,14 @@ import { PhotoType } from "@type/photosType";
 import "@css/components/detail/detail.scss";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper";
+import { Controller, Pagination } from "swiper";
 import CommonLoading from "@components/common/CommonLoading";
 
 import LayerOptionSelect from "@components/common/LayerOptionSelect";
@@ -29,6 +29,10 @@ const ListDetail: React.FC<DetailProps> = ({
   isLoading,
   error,
 }) => {
+  const linkRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  // const [firstSwiper, setFirstSwiper] = useState<Swiper | null>(null);
+  const swiper = useSwiper();
+
   if (isLoading) {
     return <CommonLoading />;
   }
@@ -47,6 +51,15 @@ const ListDetail: React.FC<DetailProps> = ({
     "https://via.placeholder.com/150/315aa6",
   ];
 
+  const clickItem = (obj: any, selnum: number, tot: number) => {
+    for (let i = 0; i < tot; i++) {
+      linkRefs.current[i]?.classList.remove("on");
+    }
+    // Swiper.slideTo(selnum, 2000);
+    console.log(Swiper);
+    linkRefs.current[selnum]?.classList.add("on");
+  };
+
   return (
     <div className="detail">
       <div style={{ width: "400px" }}>
@@ -54,8 +67,9 @@ const ListDetail: React.FC<DetailProps> = ({
           <div className="swiper-container">
             <Swiper
               pagination={true}
-              modules={[Pagination]}
+              modules={[Pagination, Controller]}
               className="mySwiper"
+              // onSwiper={setFirstSwiper}
             >
               {photosArr.map((val: string, idx: number) => (
                 <SwiperSlide key={idx}>
@@ -70,6 +84,8 @@ const ListDetail: React.FC<DetailProps> = ({
             <button
               className={"swiper-slide " + (idx === 0 ? "on" : "")}
               key={idx}
+              onClick={(evt) => clickItem(evt, idx, photosArr.length)}
+              ref={(ref) => (linkRefs.current[idx] = ref)}
             >
               <img src={val} />
             </button>

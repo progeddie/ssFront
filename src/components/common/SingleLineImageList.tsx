@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: "flex",
-      width: "530px",
+      width: "368px",
       flexWrap: "wrap",
       justifyContent: "space-around",
       overflow: "hidden",

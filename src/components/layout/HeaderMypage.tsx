@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "@css/components/layout/header.scss";
 import top from "@images/sample/topn@3x.png";
 import LangSelect from "@components/layout/LangSelect";
@@ -7,6 +7,7 @@ interface HeaderProps {
 }
 
 const HeaderMypage: React.FC<HeaderProps> = ({ lang }) => {
+  const history = useNavigate();
   const textArr =
     lang === "en"
       ? {
@@ -44,7 +45,7 @@ const HeaderMypage: React.FC<HeaderProps> = ({ lang }) => {
       <div className="viewHeader2">
         <div className="header">
           <div>
-            <a href="javascript:history.back()" className="btn_goback"></a>
+            <button onClick={() => history(-1)} className="btn_goback"></button>
           </div>
           {/* <div className="ham_box">
             <input type="checkbox" id="icon" />
