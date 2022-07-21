@@ -3,20 +3,21 @@ import { PhotoType } from "@type/photosType";
 import "@css/components/detail/detail.scss";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Controller, Pagination } from "swiper";
+import SwiperCore, { Controller, Pagination } from "swiper";
 import CommonLoading from "@components/common/CommonLoading";
 
 import LayerOptionSelect from "@components/common/LayerOptionSelect";
 import SingleLineImageList from "@components/common/SingleLineImageList";
 
 interface DetailProps {
+  lang: string;
   photo: PhotoType | undefined;
   isLoading: boolean;
   error: Error | null;
@@ -24,15 +25,14 @@ interface DetailProps {
 }
 
 const ListDetail: React.FC<DetailProps> = ({
+  lang,
   photos,
   photo,
   isLoading,
   error,
 }) => {
   const linkRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  // const [firstSwiper, setFirstSwiper] = useState<Swiper | null>(null);
-  const swiper = useSwiper();
-
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore>();
   if (isLoading) {
     return <CommonLoading />;
   }
@@ -55,8 +55,7 @@ const ListDetail: React.FC<DetailProps> = ({
     for (let i = 0; i < tot; i++) {
       linkRefs.current[i]?.classList.remove("on");
     }
-    // Swiper.slideTo(selnum, 2000);
-    console.log(Swiper);
+    swiperInstance?.slideTo(selnum, 1000);
     linkRefs.current[selnum]?.classList.add("on");
   };
 
@@ -69,7 +68,7 @@ const ListDetail: React.FC<DetailProps> = ({
               pagination={true}
               modules={[Pagination, Controller]}
               className="mySwiper"
-              // onSwiper={setFirstSwiper}
+              onSwiper={setSwiperInstance}
             >
               {photosArr.map((val: string, idx: number) => (
                 <SwiperSlide key={idx}>
@@ -145,7 +144,7 @@ const ListDetail: React.FC<DetailProps> = ({
               <div className="info_delivery_box">
                 <strong>다른상품</strong>
               </div>
-              <SingleLineImageList photos={photos} />
+              <SingleLineImageList lang={lang} photos={photos} />
             </div>
 
             <div className="info_notice_box">

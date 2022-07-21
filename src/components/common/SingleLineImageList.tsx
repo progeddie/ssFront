@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
@@ -33,12 +34,13 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface PhotoTypes {
+  lang: string;
   photos: PhotoType[];
 }
 
 // interface photosIfc extends Array<PhotoType> {}
 
-const SingleLineImageList: React.FC<PhotoTypes> = ({ photos }) => {
+const SingleLineImageList: React.FC<PhotoTypes> = ({ lang, photos }) => {
   const classes = useStyles();
 
   return (
@@ -46,7 +48,9 @@ const SingleLineImageList: React.FC<PhotoTypes> = ({ photos }) => {
       <ImageList className={classes.imageList} cols={2.5}>
         {photos.map((item) => (
           <ImageListItem key={item.thumbnailUrl}>
+            {/* <Link to={`/${lang}/list/${item.id}`}> */}
             <img src={item.thumbnailUrl} alt={item.title} />
+            {/* </Link> */}
             <ImageListItemBar
               title={item.title}
               classes={{

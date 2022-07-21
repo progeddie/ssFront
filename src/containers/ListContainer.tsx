@@ -28,7 +28,7 @@ const ListContainer: React.FC = () => {
       <HeaderContainer lang={lang} />
       <List
         lang={lang}
-        photos={lists || []}
+        photos={lists}
         isLoading={photosFetch.isLoading}
         error={photosFetch.error}
       />

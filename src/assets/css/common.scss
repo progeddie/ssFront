@@ -2306,7 +2306,19 @@ body,
 .search .normal_header,
 .btn_goback,
 .btn_goback2 {
-  display: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  // margin: auto;
+  background: url("/assets/images/common/ico_menu_back.svg") no-repeat center
+    center;
+  background-size: 24px;
+  position: absolute;
+  top: 0;
+  margin: 0px 10px 0px 0px;
+  outline: 0;
+  border: 0;
+  font-size: 0;
 }
 
 .header.menu_2 {

@@ -80,7 +80,7 @@ const List: React.FC<PhotosProps> = ({ lang, photos, isLoading, error }) => {
       linkRefs.current[selected]?.focus();
       setPhotoArr(photos);
     }
-  }, [isLoading, error]);
+  }, [isLoading, error, photoArr]);
 
   useEffect(() => {
     filterItem();

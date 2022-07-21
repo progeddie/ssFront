@@ -28,6 +28,12 @@ const HeaderMypage: React.FC<HeaderProps> = ({ lang }) => {
       <div className="viewHeader1">
         <div className="one_row">
           <div className="nav_area top_text">
+            <div>
+              <button
+                onClick={() => history(-1)}
+                className="btn_goback"
+              ></button>
+            </div>
             <div>{textArr[0]}</div>
             <div>{textArr[1]}</div>
             <div>{textArr[2]}</div>

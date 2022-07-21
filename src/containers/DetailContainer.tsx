@@ -18,7 +18,6 @@ const ListContainer: React.FC = () => {
   let selNum: number = 0;
   if (params.id) selNum = parseInt(params.id);
   const photos = useRecoilValue(listState);
-  console.log(photos);
 
   const {
     data: photo,
@@ -34,6 +33,7 @@ const ListContainer: React.FC = () => {
     <div>
       <HeaderContainer lang={lang} />
       <Detail
+        lang={lang}
         photos={photos || []}
         photo={photo}
         isLoading={isLoading}
