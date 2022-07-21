@@ -1,4 +1,9 @@
-const Login: React.FC = () => {
+import { Link } from "react-router-dom";
+interface LoginProps {
+  lang: string;
+}
+
+const Login: React.FC<LoginProps> = ({ lang }) => {
   return (
     <div>
       <div className="join_section pb50" id="Login">
@@ -58,9 +63,9 @@ const Login: React.FC = () => {
                 <a href="/member/pwsearch" className="a_txt">
                   비밀번호 찾기
                 </a>
-                <a href="/member/signup" className="a_txt">
+                <Link to={`/${lang}/member/signup`} className="a_txt">
                   회원가입
-                </a>
+                </Link>
               </span>
             </div>
           </div>

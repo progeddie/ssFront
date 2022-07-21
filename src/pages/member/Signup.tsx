@@ -1,4 +1,8 @@
-const Signup: React.FC = () => {
+interface SignUpProps {
+  lang: string;
+}
+
+const Signup: React.FC<SignUpProps> = ({ lang }) => {
   return (
     <div>
       <div className="menu_section">

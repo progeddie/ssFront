@@ -27,7 +27,9 @@ const HeaderHome: React.FC<HeaderProps> = ({ lang }) => {
       <div className="viewHeader1">
         <div className="one_row">
           <div className="nav_area top_text">
-            <div>{textArr[0]}</div>
+            <div>
+              <Link to={`/${lang}/member/login`}>{textArr[0]}</Link>
+            </div>
             <div>{textArr[1]}</div>
             <div>{textArr[2]}</div>
             <div>{textArr[3]}</div>
@@ -53,7 +55,7 @@ const HeaderHome: React.FC<HeaderProps> = ({ lang }) => {
             <div id="header">
               <ul>
                 <li>
-                  <Link to="">{textArr[0]}</Link>
+                  <Link to={`/${lang}/member/login`}>{textArr[0]}</Link>
                 </li>
                 <li>
                   <Link to="">{textArr[1]}</Link>
