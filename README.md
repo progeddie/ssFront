@@ -1,10 +1,13 @@
-# 기본적인 설명
+# 기본설명
 
 ```
 cra + recoil + reactquery + craco project
+쇼핑몰 사이트
 ```
 
-```기능
+# 기능
+
+```
 
 - 반응형 상단바
 - 다국어 처리
@@ -16,13 +19,16 @@ cra + recoil + reactquery + craco project
 
 # 폴더구조
 
-- api
-- assets
-  - commonTs
-  - css
-  - images
-- components
-- containers
-- global-state
-- pages
-- types
+- build
+- public
+- src
+  - api
+  - assets
+    - commonTs
+    - css
+    - images
+  - components
+  - containers
+  - global-state
+  - pages
+  - types

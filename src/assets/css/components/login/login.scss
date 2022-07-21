@@ -1,0 +1,240 @@
+.join_section {
+  width: 400px;
+  height: 600px;
+  top: 189px;
+  position: relative;
+  padding: 0 20px;
+  background-color: #fff;
+  .login_title_area {
+    h1 {
+      padding-top: 20px;
+      text-align: center;
+    }
+    img {
+      width: 101px;
+    }
+  }
+  .login_form_area {
+    button {
+      outline: 0;
+      border: 0;
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 45px;
+      font-weight: 600;
+      font-size: 16px;
+      display: inline-block;
+      text-align: center;
+    }
+    .kakao_login {
+      background: linear-gradient(0deg, #ffd710, #ffd710), #fadd4b;
+      border: 1px solid #ebcc32;
+      border-radius: 5px;
+      box-shadow: none;
+      color: #3b1d1d;
+    }
+    .apple_login {
+      margin-top: 10px;
+      background-color: #fff;
+      border: 1px solid #3d3d3d;
+      border-radius: 5px;
+      box-shadow: none;
+      color: #3d3d3d;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 0 5px -3px 0;
+        background: url("/assets/images/common/ico_apple.svg") no-repeat;
+        background-size: 100%;
+      }
+    }
+    .non_member_order_info {
+      margin-top: 30px;
+      border: 1px solid #dbdbdb;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #555 !important;
+      background-color: #fff;
+      outline: 0;
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      display: inline-block;
+      text-align: center;
+      box-shadow: none;
+    }
+
+    .id_section {
+      position: relative;
+      input {
+        border-radius: 5px;
+        padding-right: 45px;
+        height: 40px;
+        background-color: #f7f7f7;
+      }
+    }
+    .password_section {
+      position: relative;
+      margin-top: 10px;
+      input {
+        border-radius: 5px;
+        padding-right: 45px;
+        height: 40px;
+        background-color: #f7f7f7;
+        width: 100%;
+      }
+    }
+    .hr_break_line {
+      margin: 15px 0;
+      position: relative;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      &:before {
+        content: "";
+        margin-left: -20px;
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: #efefef;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        z-index: 1;
+      }
+      span {
+        position: relative;
+        z-index: 2;
+        padding: 0 5px;
+        background-color: #fff;
+      }
+    }
+  }
+}
+.login_button {
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 5px !important;
+  background-color: #ff4b3b;
+  border: 1px solid #f63f2f;
+  color: #fff;
+  outline: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+.inp_checkbox_group {
+  float: left;
+}
+.btn_text_del {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("/assets/images/common/btn_text_del.svg") no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.btn_password_del {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url("/assets/images/common/btn_text_del.svg") no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.blue_underline {
+  font-size: 15px;
+  color: #6e8ebc;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #6e8ebc;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+  }
+}
+.list_style_box {
+  margin-top: 8px;
+  padding: 0;
+  li {
+    position: relative;
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    line-height: 17px;
+    padding-left: 10px;
+    margin-top: 5px;
+    &:before {
+      content: "•";
+      display: inline;
+      position: absolute;
+      top: -1px;
+      left: 0;
+    }
+    a.black_underline {
+      font-size: 12px;
+    }
+  }
+}
+.hott_app_box {
+  margin-top: 25px;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: #3d3d3d;
+    &:before {
+      content: "";
+      margin-right: 3px;
+      display: block;
+      width: 31px;
+      height: 31px;
+      background: url("/assets/images/common/ico_hottapp.svg") no-repeat;
+      background-size: 100%;
+    }
+    a {
+      margin-left: 3px;
+    }
+  }
+}
+
+input[type="checkbox"]:checked + label:before {
+  text-align: center;
+  background: url("/assets/images/common/inp_check_on.svg") no-repeat;
+  background-size: auto 20px;
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: -1px;
+  background: url("/assets/images/common/inp_check_off.svg") no-repeat;
+  background-size: auto 20px;
+}

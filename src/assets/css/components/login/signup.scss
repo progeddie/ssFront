@@ -1,0 +1,26 @@
+.info_box {
+  h2 {
+    font-weight: 500;
+    font-size: 17px;
+    color: #333;
+  }
+  .subtext {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #777;
+  }
+  .id_detail {
+    display: inline-block;
+    width: 140px;
+    height: 27px;
+    padding-top: 3px;
+    background: url("/assets/images/common/bg_sale_info_detail2.svg") no-repeat;
+    background-size: 140px;
+    font-weight: 400;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    position: absolute;
+    top: -3px;
+  }
+}

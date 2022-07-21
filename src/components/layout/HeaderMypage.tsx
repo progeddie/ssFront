@@ -11,13 +11,13 @@ const HeaderMypage: React.FC<HeaderProps> = ({ lang }) => {
   const textArr =
     lang === "en"
       ? {
-          0: "BE LICENSOR",
+          0: "MYPAGE",
           1: "BE CREATOR",
           2: "SUPPORT",
           3: "CONTACT",
         }
       : {
-          0: "라이센스",
+          0: "마이페이지",
           1: "창작자",
           2: "고객지원",
           3: "사이트맵",
