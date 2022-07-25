@@ -17,6 +17,7 @@
     "node-sass": "^7.0.1",
     "react": "^18.3.0-next-d1432ba93-20220628",
     "react-dom": "^18.3.0-next-d1432ba93-20220628",
+    "react-hook-form": "^7.33.1",
     "react-loading": "^2.0.3",
     "react-query": "^3.39.1",
     "react-router-dom": "^6.3.0",

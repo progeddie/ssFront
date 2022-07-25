@@ -1,8 +1,21 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 interface SignUpProps {
   lang: string;
 }
 
 const Signup: React.FC<SignUpProps> = ({ lang }) => {
+  const [idPopIsVisible, setIdPopIsVisible] = useState(false);
+  const [passPopIsVisible, setPassPopIsVisible] = useState(false);
+
+  const idTooltipPop = () => {
+    setIdPopIsVisible(!idPopIsVisible);
+  };
+
+  const passTooltipPop = () => {
+    setPassPopIsVisible(!passPopIsVisible);
+  };
+
   return (
     <div>
       <div className="menu_section">
@@ -17,10 +30,17 @@ const Signup: React.FC<SignUpProps> = ({ lang }) => {
                   <label htmlFor="userId" className="required">
                     아이디
                   </label>
-                  <a className="ico_tooltip id_info mr5">
+                  <a onClick={idTooltipPop} className="ico_tooltip id_info mr5">
                     <span className="hidden">비밀번호 안내 툴팁</span>
                   </a>
-                  <span className="id_detail">입력가능한 특수문자 : _ .</span>
+                  <span
+                    style={{
+                      visibility: idPopIsVisible ? "visible" : "hidden",
+                    }}
+                    className="id_detail"
+                  >
+                    입력가능한 특수문자 : _ .
+                  </span>
                 </dt>
                 <dd>
                   <div>
@@ -55,10 +75,18 @@ const Signup: React.FC<SignUpProps> = ({ lang }) => {
                   <label htmlFor="userPwd" className="required">
                     비밀번호
                   </label>
-                  <a className="ico_tooltip password_info mr5">
+                  <a
+                    onClick={passTooltipPop}
+                    className="ico_tooltip password_info mr5"
+                  >
                     <span className="hidden">비밀번호 안내 툴팁</span>
                   </a>
-                  <span className="password_detail">
+                  <span
+                    style={{
+                      visibility: passPopIsVisible ? "visible" : "hidden",
+                    }}
+                    className="password_detail"
+                  >
                     입력가능한 특수문자 : ~`!@#$\^&*()-
                   </span>
                 </dt>
